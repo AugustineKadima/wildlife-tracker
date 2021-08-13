@@ -1,6 +1,8 @@
+package modules;
+
 import java.util.ArrayList;
 
-public class Animal {
+public class Animal{
 
     private int id;
     private String name;

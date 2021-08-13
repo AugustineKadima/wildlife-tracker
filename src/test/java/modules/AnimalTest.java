@@ -1,3 +1,6 @@
+package modules;
+
+import modules.Animal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
