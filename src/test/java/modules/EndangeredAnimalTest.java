@@ -14,6 +14,7 @@ public class EndangeredAnimalTest {
 
     @Test
     public void EndangeredAnimalsAddedToArrayList(){
+        EndangeredAnimal.clearEndageredAnimals();
         EndangeredAnimal endangeredAnimal1 = new EndangeredAnimal("Sheep", "healthy", "young");
         EndangeredAnimal endangeredAnimal2 = new EndangeredAnimal("Cow", "healthy", "young");
         Assertions.assertEquals(2, EndangeredAnimal.getEndangeredAnimals().size());
