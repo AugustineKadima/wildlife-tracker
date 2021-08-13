@@ -5,7 +5,7 @@ public class AnimalTest {
 
     @Test
     public void AnimalClassExists(){
-        Animal animal = new Animal();
+        Animal animal = new Animal("Dog");
         Assertions.assertEquals(true, animal instanceof Animal);
     }
 }
