@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class EndangeredAnimal extends Animal{
 
-    private int id;
+    private int endangeredId;
     private String health;
     private String age;
     public static ArrayList<EndangeredAnimal> endangeredAnimals = new ArrayList<>();
@@ -14,16 +14,22 @@ public class EndangeredAnimal extends Animal{
         super(name);
         this.health = health;
         this.age = age;
-        this.id = id;
+        endangeredAnimals.add(this);
+        this.endangeredId = endangeredAnimals.size();
+
+    }
+
+    public static void clearEndageredAnimals() {
+        endangeredAnimals.clear();
     }
 
     @Override
     public int getAnimalId() {
-        return endangeredAnimals.size();
+        return endangeredId ;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEndangeredId(int endangeredId) {
+        this.endangeredId = endangeredId;
     }
 
     public String getHealth() {
