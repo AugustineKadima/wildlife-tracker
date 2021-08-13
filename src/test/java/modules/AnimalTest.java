@@ -1,6 +1,5 @@
 package modules;
 
-import modules.Animal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,5 +9,13 @@ public class AnimalTest {
     public void AnimalClassExists(){
         Animal animal = new Animal("Dog");
         Assertions.assertEquals(true, animal instanceof Animal);
+    }
+
+    @Test
+    public void AnimalObjectsAreAddedToAnimalArrayList(){
+        Animal animal1 = new Animal("Dog");
+        Animal animal2 = new Animal("Cat");
+        Animal animal3 = new Animal("Pig");
+        Assertions.assertEquals(3, Animal.getAnimals().size());
     }
 }

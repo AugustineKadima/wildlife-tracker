@@ -18,7 +18,7 @@ public class EndangeredAnimal extends Animal{
     }
 
     @Override
-    public int getId() {
+    public int getAnimalId() {
         return endangeredAnimals.size();
     }
 

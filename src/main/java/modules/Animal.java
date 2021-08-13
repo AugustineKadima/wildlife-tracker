@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Animal{
 
-    private int id;
+    private int animalId;
     private String name;
     public static ArrayList<Animal> animals = new ArrayList<>();
 
     public Animal(String name) {
-        this.id = id;
+        this.animalId = animals.size();
         this.name = name;
         animals.add(this);
     }
 
-    public int getId() {
-        return animals.size();
+    public int getAnimalId() {
+        return animalId;
     }
 
     public String getName() {
