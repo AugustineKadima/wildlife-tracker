@@ -18,4 +18,11 @@ public class AnimalTest {
         Animal animal3 = new Animal("Pig");
         Assertions.assertEquals(3, Animal.getAnimals().size());
     }
+
+    @Test
+    public void AnimalIdInstantiatesWithAValueOf1() throws Exception {
+        Animal.clearAnimals();
+        Animal animal = new Animal("Goat");
+        Assertions.assertEquals(1, animal.getAnimalId());
+    }
 }

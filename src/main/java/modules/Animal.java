@@ -9,13 +9,20 @@ public class Animal{
     public static ArrayList<Animal> animals = new ArrayList<>();
 
     public Animal(String name) {
-        this.animalId = animals.size();
         this.name = name;
         animals.add(this);
+        this.animalId = animals.size();
+    }
+
+    public static void clearAnimals() {
+        animals.clear();
     }
 
     public int getAnimalId() {
         return animalId;
+    }
+    public void setAnimalId(int animalId) {
+        this.animalId = animalId;
     }
 
     public String getName() {
