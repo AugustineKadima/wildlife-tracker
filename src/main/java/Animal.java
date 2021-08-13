@@ -15,7 +15,6 @@ public class Animal {
     public int getId() {
         return animals.size();
     }
-    
 
     public String getName() {
         return name;
