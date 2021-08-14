@@ -4,3 +4,15 @@ body{
     padding: 0px;
 }
 
+
+.links{
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.links div{
+    display: flex;
+}
