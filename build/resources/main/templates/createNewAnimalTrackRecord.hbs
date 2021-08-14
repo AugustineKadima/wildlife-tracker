@@ -1,0 +1,37 @@
+
+
+{{#partial "content"}}
+
+
+<div class="container">
+ <h2>Fill in the form and submit to create a tracking record</h2>
+ <hr>
+    <form>
+      <div class="mb-3">
+        <label for="animalName" class="form-label">Animal Name</label>
+        <input type="text" class="form-control" id="animalName" name="animalName">
+      </div>
+
+       <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" class="form-control" id="location" name="location">
+       </div>
+
+        <div class="mb-3">
+           <label for="health" class="form-label">Health</label>
+           <input type="text" class="form-control" id="health" name="health">
+        </div>
+
+         <div class="mb-3">
+            <label for="rangerName" class="form-label">Ranger Name</label>
+            <input type="text" class="form-control" id="rangerName" name="rangerName">
+         </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{{/partial}}
+
+{{> layout.hbs}}

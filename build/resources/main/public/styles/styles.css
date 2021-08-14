@@ -4,13 +4,18 @@ body{
     padding: 0px;
 }
 
+h1{
+    color: white;
+}
+
+nav{
+    margin-bottom: 20px;
+    align-items: left;
+}
 
 .links{
     display: flex;
     flex-direction: column;
-
-
-
 }
 
 .links div{

@@ -21,13 +21,16 @@ public class App {
             return new ModelAndView(new HashMap(), "home.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/normalAnimal.hbs", (request, response) ->{
-            return new ModelAndView(new HashMap(), "normalAnimal.hbs");
+        get("/trackedAnimals.hbs", (request, response) ->{
+            return new ModelAndView(new HashMap(), "trackedAnimals.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/endangeredAnimal.hbs", (request, response) ->{
-            return new ModelAndView(new HashMap(), "endangeredAnimal.hbs");
+        get("/createNewAnimalTrackRecord.hbs", (request, response) ->{
+            return new ModelAndView(new HashMap(), "createNewAnimalTrackRecord.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/home.hbs", (request, response) ->{
+            return new ModelAndView(new HashMap(), "home.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
