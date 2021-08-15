@@ -1,21 +1,20 @@
 package dao;
 
-import modules.Animal;
-
 import java.util.List;
 
-public interface AnimalDao {
+
+public interface EndangeredAnimalDao {
     //create
-    void add(Animal animal);
+    void add(EndangeredAnimalDao endangeredAnimalAnimal);
     //void addFoodtypeToRestaurant(Foodtype foodtype, Restaurant restaurant);
 
     //read
-    List<Animal> getAll();
+    List<EndangeredAnimalDao> getAll();
     // List<Restaurant> getAllRestaurantsForAFoodtype(int id);
 
-    //update
-    void update(int id, String animalName);
 
+    //update
+    void update(int id, String animalName ,String health, String age, String location, String rangerName);
 
     //delete
     void deleteById(int id);
