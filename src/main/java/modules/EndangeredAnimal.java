@@ -7,13 +7,15 @@ public class EndangeredAnimal extends Animal{
     private int endangeredId;
     private String health;
     private String age;
+    private String rangerName;
     public static ArrayList<EndangeredAnimal> endangeredAnimals = new ArrayList<>();
 
 
-    public EndangeredAnimal(String name,String health, String age) {
+    public EndangeredAnimal(String name,String health, String age, String rangerName ) {
         super(name);
         this.health = health;
         this.age = age;
+        this.rangerName = rangerName;
         endangeredAnimals.add(this);
         this.endangeredId = endangeredAnimals.size();
 

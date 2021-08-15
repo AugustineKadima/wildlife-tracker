@@ -1,3 +1,4 @@
+import modules.EndangeredAnimal;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -32,5 +33,18 @@ public class App {
         get("/home.hbs", (request, response) ->{
             return new ModelAndView(new HashMap(), "home.hbs");
         }, new HandlebarsTemplateEngine());
+
+        post("/trackedAnimals",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String  animalName = request.queryParams("animalName");
+            String  location = request.queryParams("location");
+            String  health = request.queryParams("health");
+            String  rangerName = request.queryParams("rangerName");
+            EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, location, health, rangerName );
+            List<EndangeredAnimal> animalObj = EndangeredAnimal.getEndangeredAnimals();
+            model.put("animal", animalObj);
+            return new ModelAndView(model, "/trackedAnimals.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 }
