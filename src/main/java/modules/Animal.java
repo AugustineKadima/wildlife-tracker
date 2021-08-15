@@ -1,6 +1,7 @@
 package modules;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Animal{
 
@@ -12,6 +13,19 @@ public class Animal{
         this.name = name;
         animals.add(this);
         this.animalId = animals.size();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return animalId == animal.animalId && name.equals(animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(animalId, name);
     }
 
     public static void clearAnimals() {

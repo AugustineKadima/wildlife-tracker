@@ -1,6 +1,7 @@
 package modules;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EndangeredAnimal{
 
@@ -23,6 +24,19 @@ public class EndangeredAnimal{
         endangeredAnimals.add(this);
         this.endangeredId = endangeredAnimals.size();
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EndangeredAnimal that = (EndangeredAnimal) o;
+        return endangeredId == that.endangeredId && animalName.equals(that.animalName) && health.equals(that.health) && age.equals(that.age) && location.equals(that.location) && rangerName.equals(that.rangerName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(endangeredId, animalName, health, age, location, rangerName);
     }
 
     public static void clearEndageredAnimals() {

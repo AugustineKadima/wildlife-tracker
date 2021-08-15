@@ -1,5 +1,7 @@
 package dao;
 
+import modules.EndangeredAnimal;
+
 import java.util.List;
 
 
