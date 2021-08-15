@@ -42,6 +42,14 @@ public class EndangeredAnimal extends Animal{
         this.health = health;
     }
 
+    public String getRangerName() {
+        return rangerName;
+    }
+
+    public void setRangerName(String rangerName) {
+        this.rangerName = rangerName;
+    }
+
     public String getAge() {
         return age;
     }

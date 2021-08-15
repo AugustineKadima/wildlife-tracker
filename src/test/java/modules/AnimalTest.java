@@ -13,6 +13,7 @@ public class AnimalTest {
 
     @Test
     public void AnimalObjectsAreAddedToAnimalArrayList(){
+        Animal.clearAnimals();
         Animal animal1 = new Animal("Dog");
         Animal animal2 = new Animal("Cat");
         Animal animal3 = new Animal("Pig");

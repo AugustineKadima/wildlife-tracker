@@ -5,6 +5,16 @@
 
 <div class="container">
    <h2>Tracked animals</h2>
+   <hr>
+
+   {{#each animal}}
+       <div  class="animalInfoSelector bg-light">
+            <h4>{{animalName}}</h4>
+            <p>Location: {{location}}</p>
+            <p>Health: {{health}}</p>
+            <p>Ranger name: {{rangerName}}</p>
+       </div>
+   {{/each}}
 </div>
 
 
