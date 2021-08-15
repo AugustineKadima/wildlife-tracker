@@ -8,12 +8,18 @@
    <hr>
 
    {{#each animal}}
-       <div  class="animalInfoSelector bg-light">
-            <h4>Animal name: {{animalName}}</h4>
-            <p>Location: {{location}}</p>
-            <p>Health: {{health}}</p>
-            <p>Ranger name: {{rangerName}}</p>
+      <div  class="animalInfoSelector bg-light">
+            <h4>{{animalName}}</h4>
+            <p>More details</p>
+             <div  class="moreInfo bg-light">
+                    <p>Location: {{location}}</p>
+                    <p>Health: {{health}}</p>
+                    <p>Age: {{age}}</p>
+                    <p>Ranger name: {{rangerName}}</p>
+               </div>
+
        </div>
+
    {{/each}}
 </div>
 

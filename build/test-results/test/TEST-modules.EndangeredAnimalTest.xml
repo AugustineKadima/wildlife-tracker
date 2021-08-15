@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modules.EndangeredAnimalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-15T01:41:13" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.023">
+<testsuite name="modules.EndangeredAnimalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-15T02:26:30" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.024">
   <properties/>
   <testcase name="EndangeredAnimalClassExists()" classname="modules.EndangeredAnimalTest" time="0.02"/>
   <testcase name="EndangeredAnimalsAddedToArrayList()" classname="modules.EndangeredAnimalTest" time="0.001"/>

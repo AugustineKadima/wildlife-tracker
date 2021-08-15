@@ -2,17 +2,21 @@ package modules;
 
 import java.util.ArrayList;
 
-public class EndangeredAnimal extends Animal{
+public class EndangeredAnimal{
 
     private int endangeredId;
+    private String animalName;
     private String health;
     private String age;
+    public String location;
     private String rangerName;
     public static ArrayList<EndangeredAnimal> endangeredAnimals = new ArrayList<>();
 
 
-    public EndangeredAnimal(String name,String health, String age, String rangerName ) {
-        super(name);
+    public EndangeredAnimal(String animalName ,String health, String age, String location, String rangerName ) {
+
+        this.animalName = animalName;
+        this.location = location;
         this.health = health;
         this.age = age;
         this.rangerName = rangerName;
@@ -25,7 +29,6 @@ public class EndangeredAnimal extends Animal{
         endangeredAnimals.clear();
     }
 
-    @Override
     public int getAnimalId() {
         return endangeredId ;
     }
@@ -40,6 +43,22 @@ public class EndangeredAnimal extends Animal{
 
     public void setHealth(String health) {
         this.health = health;
+    }
+
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getRangerName() {

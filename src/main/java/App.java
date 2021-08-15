@@ -40,7 +40,8 @@ public class App {
             String  location = request.queryParams("location");
             String  health = request.queryParams("health");
             String  rangerName = request.queryParams("rangerName");
-            EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, location, health, rangerName );
+            String  age = request.queryParams("age");
+            EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, health, age, location, rangerName );
             List<EndangeredAnimal> animalObj = EndangeredAnimal.getEndangeredAnimals();
             model.put("animal", animalObj);
             return new ModelAndView(model, "/trackedAnimals.hbs");
