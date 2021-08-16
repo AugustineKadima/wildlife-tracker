@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface EndangeredAnimalDao {
     //create
-    void add(EndangeredAnimalDao endangeredAnimalAnimal);
+    void add(EndangeredAnimal endangeredAnimal);
     //void addFoodtypeToRestaurant(Foodtype foodtype, Restaurant restaurant);
 
     //read
-    List<EndangeredAnimalDao> getAll();
+    List<EndangeredAnimal> getAll();
     // List<Restaurant> getAllRestaurantsForAFoodtype(int id);
 
 

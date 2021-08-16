@@ -1,6 +1,14 @@
-modules/Animal.java
- modules.Animal
 App.java
  App
+modules/Animal.java
+ modules.Animal
+dao/Sql2oAnimalDao.java
+ dao.Sql2oAnimalDao
+dao/Sql2oEndangeredAnimal.java
+ dao.Sql2oEndangeredAnimal
+dao/AnimalDao.java
+ dao.AnimalDao
+dao/EndangeredAnimalDao.java
+ dao.EndangeredAnimalDao
 modules/EndangeredAnimal.java
  modules.EndangeredAnimal

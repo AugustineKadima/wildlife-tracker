@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Sql2oAnimalDao implements AnimalDao {
 
-    private final Sql2o sql2o;
+    private Sql2o sql2o;
 
-    public Sql2oReviewDao(Sql2o sql2o) {
+    public void Sql2oReviewDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
 
@@ -23,7 +23,7 @@ public class Sql2oAnimalDao implements AnimalDao {
                     .bind(animal)
                     .executeUpdate()
                     .getKey();
-            animal.setId(id);
+            animal.setAnimalId(id);
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
@@ -46,11 +46,23 @@ public class Sql2oAnimalDao implements AnimalDao {
 
     @Override
     public void deleteById(int id) {
-
+        String sql = "DELETE from animals WHERE id=:id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 
     @Override
     public void clearAll() {
-
+        String sql = "DELETE from animals";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql).executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modules.EndangeredAnimalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-15T02:26:30" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.024">
+<testsuite name="modules.EndangeredAnimalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-16T07:32:37" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.044">
   <properties/>
-  <testcase name="EndangeredAnimalClassExists()" classname="modules.EndangeredAnimalTest" time="0.02"/>
+  <testcase name="EndangeredAnimalClassExists()" classname="modules.EndangeredAnimalTest" time="0.038"/>
   <testcase name="EndangeredAnimalsAddedToArrayList()" classname="modules.EndangeredAnimalTest" time="0.001"/>
-  <testcase name="endangeredAnimalsInstantiatesWithAnIdOf1()" classname="modules.EndangeredAnimalTest" time="0.001"/>
+  <testcase name="endangeredAnimalsInstantiatesWithAnIdOf1()" classname="modules.EndangeredAnimalTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
