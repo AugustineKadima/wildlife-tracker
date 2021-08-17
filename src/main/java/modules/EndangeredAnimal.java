@@ -36,7 +36,7 @@ public class EndangeredAnimal{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EndangeredAnimal that = (EndangeredAnimal) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(health, that.health) && Objects.equals(age, that.age) && Objects.equals(location, that.location) && Objects.equals(rangerName, that.rangerName);
+        return id == that.id && name.equals(that.name) && health.equals(that.health) && age.equals(that.age) && location.equals(that.location) && rangerName.equals(that.rangerName);
     }
 
     @Override
@@ -106,13 +106,13 @@ public class EndangeredAnimal{
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals(name, health, age, location, rangerName) VALUES (:name, :health, :age, :location, :rangername );";
+            String sql = "INSERT INTO animals(name, health, age, location, ranger_name) VALUES (:name, :health, :age, :location, :ranger_name );";
             con.createQuery(sql)
                     .addParameter("name", name)
                     .addParameter("health", health)
                     .addParameter("age", age)
                     .addParameter("location", location)
-                    .addParameter("rangername", rangerName)
+                    .addParameter("ranger_name", rangerName)
                     .executeUpdate();
         }
         catch (Sql2oException error){
