@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+
+<div class="container">
+    <form action="/sightings" method="POST">
+          <div class="mb-3">
+            <label for="sightings" class="form-label">Site Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>
+
+<div class="container">
+<h4>Sightings</h4>
+<hr>
+{{#each sightings}}
+<p>{{name}}</p>
+{{/each}}
+</div>
+
+
+
+{{/partial}}
+
+{{> layout.hbs}}

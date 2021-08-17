@@ -1,0 +1,29 @@
+
+
+{{#partial "content"}}
+
+
+<div class="container">
+   <h2>Tracked animals</h2>
+   <hr>
+
+   {{#each animal}}
+      <div  class="animalInfoSelector bg-light">
+            <h4>{{name}}</h4>
+            <p>Details</p>
+             <div  class="moreInfo bg-light">
+                    <p>Location: {{location}}</p>
+                    <p>Health: {{health}}</p>
+                    <p>Age: {{age}}</p>
+                    <p>Ranger name: {{rangerName}}</p>
+               </div>
+
+       </div>
+
+   {{/each}}
+</div>
+
+
+{{/partial}}
+
+{{> layout.hbs}}

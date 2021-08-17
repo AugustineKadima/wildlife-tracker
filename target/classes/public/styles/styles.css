@@ -1,0 +1,63 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    color: white;
+}
+
+nav{
+    margin-bottom: 20px;
+    height: 20vh;
+
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space evenly;
+}
+
+.navLinks{
+    display: flex;
+    flex-direction: row;
+}
+.navLinks div{
+    display: flex;
+}
+
+.imgHero{
+    background-image: url("/images/animals.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-position: center;
+    margin-top: -20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroText{
+    width: 400px;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(50, 150, 92, 0.7);
+    padding: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px green;
+
+}
+
+.animalInfoSelector{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}

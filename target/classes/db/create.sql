@@ -1,0 +1,16 @@
+
+
+
+CREATE TABLE IF NOT EXISTS animals (
+ id  SERIAL PRIMARY KEY,
+ name VARCHAR,
+ health VARCHAR,
+ age VARCHAR,
+ location VARCHAR,
+ rangerName VARCHAR
+);
+
+CREATE TABLE IF NOT EXISTS sightings (
+ id  SERIAL PRIMARY KEY,
+ name VARCHAR
+);
