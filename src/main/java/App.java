@@ -21,7 +21,7 @@ public class App {
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
     public static void main(String[] args) {
-//        port(getHerokuAssignedPort());
+        port(getHerokuAssignedPort());
 //        String connectionString = "jdbc:postgresql://localhost:5432/animal_tracker";
 //        Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
 
