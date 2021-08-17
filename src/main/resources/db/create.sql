@@ -1,16 +1,16 @@
-SET MODE PostgreSQL;
+
+
 
 CREATE TABLE IF NOT EXISTS animals (
- id int PRIMARY KEY auto_increment,
+ id  SERIAL PRIMARY KEY,
  name VARCHAR,
  health VARCHAR,
  age VARCHAR,
  location VARCHAR,
- rangerName VARCHAR,
- email VARCHAR
+ rangerName VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS sightings (
- id int PRIMARY KEY auto_increment,
+ id  SERIAL PRIMARY KEY,
  name VARCHAR
 );

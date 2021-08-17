@@ -1,12 +1,16 @@
 package modules;
 
+import org.sql2o.Connection;
+import org.sql2o.Sql2oException;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class EndangeredAnimal{
 
-    private int endangeredId;
-    private String animalName;
+    private int id;
+    private String name;
     private String health;
     private String age;
     public String location;
@@ -14,15 +18,16 @@ public class EndangeredAnimal{
     public static ArrayList<EndangeredAnimal> endangeredAnimals = new ArrayList<>();
 
 
-    public EndangeredAnimal(String animalName ,String health, String age, String location, String rangerName ) {
+    public EndangeredAnimal(String name ,String health, String age, String location, String rangerName ) {
 
-        this.animalName = animalName;
+
+        this.name = name;
         this.location = location;
         this.health = health;
         this.age = age;
         this.rangerName = rangerName;
         endangeredAnimals.add(this);
-        this.endangeredId = endangeredAnimals.size();
+        this.id = endangeredAnimals.size();
 
     }
 
@@ -31,12 +36,12 @@ public class EndangeredAnimal{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EndangeredAnimal that = (EndangeredAnimal) o;
-        return endangeredId == that.endangeredId && animalName.equals(that.animalName) && health.equals(that.health) && age.equals(that.age) && location.equals(that.location) && rangerName.equals(that.rangerName);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(health, that.health) && Objects.equals(age, that.age) && Objects.equals(location, that.location) && Objects.equals(rangerName, that.rangerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endangeredId, animalName, health, age, location, rangerName);
+        return Objects.hash(id, name, health, age, location, rangerName);
     }
 
     public static void clearEndageredAnimals() {
@@ -44,11 +49,11 @@ public class EndangeredAnimal{
     }
 
     public int getAnimalId() {
-        return endangeredId ;
+        return id;
     }
 
-    public void setEndangeredId(int endangeredId) {
-        this.endangeredId = endangeredId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getHealth() {
@@ -59,12 +64,12 @@ public class EndangeredAnimal{
         this.health = health;
     }
 
-    public String getAnimalName() {
-        return animalName;
+    public String getName() {
+        return name;
     }
 
-    public void setAnimalName(String animalName) {
-        this.animalName = animalName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLocation() {
@@ -97,5 +102,27 @@ public class EndangeredAnimal{
 
     public void setEndangeredAnimals(ArrayList<EndangeredAnimal> endangeredAnimals) {
         this.endangeredAnimals = endangeredAnimals;
+    }
+
+    public void save() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO animals(name, health, age, location, rangerName) VALUES (:name, :health, :age, :location, :rangername );";
+            con.createQuery(sql)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("location", this.location)
+                    .addParameter("rangername", this.rangerName)
+                    .executeUpdate();
+        }
+        catch (Sql2oException error){
+            System.out.println("There was an error: " + error);
+        }
+    }
+    public static List<EndangeredAnimal> getAll(){
+        try(Connection con  = DB.sql2o.open()){
+            String sql = "SELECT * FROM animals;";
+            return con.createQuery(sql).executeAndFetch(EndangeredAnimal.class);
+        }
     }
 }

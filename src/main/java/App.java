@@ -1,4 +1,6 @@
 import modules.EndangeredAnimal;
+import modules.Sightings;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -11,6 +13,10 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
+
+//        String connectionString = "jdbc:postgresql://localhost:5432/animal_tracker";
+        String connectionString = "jdbc:h2:~/jadle.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
 
         staticFileLocation("/public");
 
@@ -42,10 +48,33 @@ public class App {
             String  rangerName = request.queryParams("rangerName");
             String  age = request.queryParams("age");
             EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, health, age, location, rangerName );
-            List<EndangeredAnimal> animalObj = EndangeredAnimal.getEndangeredAnimals();
+
+            endangeredAnimal.save();
+            List<EndangeredAnimal> animalObj = EndangeredAnimal.getAll();
+
             model.put("animal", animalObj);
+
             return new ModelAndView(model, "/trackedAnimals.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/sightings.hbs", (request, response) ->{
+            return new ModelAndView(new HashMap(), "sightings.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/sightings",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String  sighting = request.queryParams("sightings");
+
+            Sightings site = new Sightings(sighting);
+            site.save();
+            List<Sightings> siteObj = Sightings.getAll();
+
+            model.put("sighting", siteObj);
+
+            return new ModelAndView(model, "/sightings.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
 
     }
 }
