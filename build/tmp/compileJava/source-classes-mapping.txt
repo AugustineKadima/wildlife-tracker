@@ -1,10 +1,10 @@
-modules/EndangeredAnimal.java
- modules.EndangeredAnimal
+App.java
+ App
 modules/Animal.java
  modules.Animal
 modules/Sightings.java
  modules.Sightings
 modules/DB.java
  modules.DB
-App.java
- App
+modules/EndangeredAnimal.java
+ modules.EndangeredAnimal

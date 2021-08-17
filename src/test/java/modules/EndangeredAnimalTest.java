@@ -10,17 +10,16 @@ import org.sql2o.Sql2o;
 
 public class EndangeredAnimalTest {
 
+    private static Connection conn;
     @BeforeAll
     public static void databaseOpens(){
-        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/animal_tracker_test", "sirkadima", "kadima123");
-    }
+        String connection = "jdbc:postgresql://localhost:5432/animals_test";
+        Sql2o sql2o = new Sql2o(connection, "sirkadima", "kadima123");
+        conn = sql2o.open();    }
 
     @AfterEach
     public void deletesDatabaseObjects() {
-        try (Connection con = DB.sql2o.open()) {
-            String sql = "DELETE FROM animals *";
-            con.createQuery(sql).executeUpdate();
-        }
+       EndangeredAnimal.clearAll();
     }
 
     @Test

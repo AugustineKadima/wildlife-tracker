@@ -108,11 +108,11 @@ public class EndangeredAnimal{
         try(Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animals(name, health, age, location, rangerName) VALUES (:name, :health, :age, :location, :rangername );";
             con.createQuery(sql)
-                    .addParameter("name", this.name)
-                    .addParameter("health", this.health)
-                    .addParameter("age", this.age)
-                    .addParameter("location", this.location)
-                    .addParameter("rangername", this.rangerName)
+                    .addParameter("name", name)
+                    .addParameter("health", health)
+                    .addParameter("age", age)
+                    .addParameter("location", location)
+                    .addParameter("rangername", rangerName)
                     .executeUpdate();
         }
         catch (Sql2oException error){
@@ -123,6 +123,16 @@ public class EndangeredAnimal{
         try(Connection con  = DB.sql2o.open()){
             String sql = "SELECT * FROM animals;";
             return con.createQuery(sql).executeAndFetch(EndangeredAnimal.class);
+        }
+    }
+
+    public static void clearAll(){
+        String sql = "DELETE FROM animals *;";
+        try (Connection con = DB.sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ey) {
+            System.out.println(ey);
         }
     }
 }
