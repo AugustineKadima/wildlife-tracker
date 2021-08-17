@@ -52,12 +52,9 @@ public class App {
             String  rangerName = request.queryParams("rangerName");
             String  age = request.queryParams("age");
             EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, health, age, location, rangerName );
-
             endangeredAnimal.save();
             List<EndangeredAnimal> animalObj = EndangeredAnimal.getAll();
-
             model.put("animal", animalObj);
-
             return new ModelAndView(model, "/trackedAnimals.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -67,6 +64,8 @@ public class App {
             String name = req.queryParams("name");
             Sightings animal = new Sightings(name);
             animal.save();
+            List<Sightings> siteObj = Sightings.getAll();
+            model.put("sightings", siteObj);
             return new ModelAndView(model,"sightings.hbs");
         }, new HandlebarsTemplateEngine());
 

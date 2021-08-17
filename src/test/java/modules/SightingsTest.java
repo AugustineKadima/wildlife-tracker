@@ -37,7 +37,7 @@ public class SightingsTest {
     }
 
     @Test
-    public void all_returnsAllInstancesOfPerson_true() {
+    public void all_returnsAllInstancesOfName_true() {
         Sightings site= new Sightings("Henry");
         site.save();
         Sightings site2 = new Sightings("Harriet");
