@@ -14,7 +14,7 @@
 *.dmg
 *.gz
 *.iso
-*.jar
+
 *.rar
 *.tar
 *.zip
@@ -40,9 +40,9 @@ build/
 out/
 out
 .gradle
-gradle
-gradlew.bat
-gradlew
+
+
+
 settings.gradle
 
 # IntelliJ #

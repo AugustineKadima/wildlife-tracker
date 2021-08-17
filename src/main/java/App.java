@@ -25,7 +25,7 @@ public class App {
 //        String connectionString = "jdbc:postgresql://localhost:5432/animal_tracker";
 //        Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
 
-        String connectionString = "postgres://equcrtjgiuqdnv:32f74a1ac27fbb9c978d62c9a7c484c30afa3f53820c4eef732b56b219c65d6e@ec2-52-203-74-38.compute-1.amazonaws.com:5432/de32oaklddncai"; //!
+        String connectionString = "postgresql://equcrtjgiuqdnv:32f74a1ac27fbb9c978d62c9a7c484c30afa3f53820c4eef732b56b219c65d6e@ec2-52-203-74-38.compute-1.amazonaws.com:5432/de32oaklddncai"; //!
         Sql2o sql2o = new Sql2o(connectionString,
                 "equcrtjgiuqdnv", "32f74a1ac27fbb9c978d62c9a7c484c30afa3f53820c4eef732b56b219c65d6e");
 
