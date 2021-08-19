@@ -3,15 +3,22 @@ package modules;
 import org.sql2o.Connection;
 import org.sql2o.Sql2oException;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
 public class Sightings {
     private int id;
     private String name;
+    private Timestamp timestamp;
+
 
     public Sightings(String name) {
         this.name = name;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
     public int getId() {
@@ -45,7 +52,7 @@ public class Sightings {
 
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings(name) VALUES (:name);";
+            String sql = "INSERT INTO sightings(name, timestamp) VALUES (:name, now());";
             con.createQuery(sql)
                     .addParameter("name", name)
                     .executeUpdate();

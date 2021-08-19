@@ -14,18 +14,18 @@ public class EndangeredAnimal{
     private String health;
     private String age;
     public String location;
-    private String rangerName;
+    private String ranger_name;
     public static ArrayList<EndangeredAnimal> endangeredAnimals = new ArrayList<>();
 
 
-    public EndangeredAnimal(String name ,String health, String age, String location, String rangerName ) {
+    public EndangeredAnimal(String name ,String health, String age, String location, String ranger_name ) {
 
 
         this.name = name;
         this.location = location;
         this.health = health;
         this.age = age;
-        this.rangerName = rangerName;
+        this.ranger_name = ranger_name;
         endangeredAnimals.add(this);
         this.id = endangeredAnimals.size();
 
@@ -36,12 +36,12 @@ public class EndangeredAnimal{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EndangeredAnimal that = (EndangeredAnimal) o;
-        return id == that.id && name.equals(that.name) && health.equals(that.health) && age.equals(that.age) && location.equals(that.location) && rangerName.equals(that.rangerName);
+        return id == that.id && name.equals(that.name) && health.equals(that.health) && age.equals(that.age) && location.equals(that.location) && ranger_name.equals(that.ranger_name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, health, age, location, rangerName);
+        return Objects.hash(id, name, health, age, location, ranger_name);
     }
 
     public static void clearEndageredAnimals() {
@@ -80,12 +80,12 @@ public class EndangeredAnimal{
         this.location = location;
     }
 
-    public String getRangerName() {
-        return rangerName;
+    public String getRanger_name() {
+        return ranger_name;
     }
 
-    public void setRangerName(String rangerName) {
-        this.rangerName = rangerName;
+    public void setRanger_name(String ranger_name) {
+        this.ranger_name = ranger_name;
     }
 
     public String getAge() {
@@ -112,7 +112,7 @@ public class EndangeredAnimal{
                     .addParameter("health", health)
                     .addParameter("age", age)
                     .addParameter("location", location)
-                    .addParameter("ranger_name", rangerName)
+                    .addParameter("ranger_name", ranger_name)
                     .executeUpdate();
         }
         catch (Sql2oException error){

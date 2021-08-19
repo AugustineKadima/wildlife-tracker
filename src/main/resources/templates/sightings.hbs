@@ -15,8 +15,12 @@
 <div class="container">
 <h4>Sightings</h4>
 <hr>
+
 {{#each sightings}}
-<p>{{name}}</p>
+<div class="timestamp">
+<p>Site: {{name}}</p>
+<p>Time: {{timestamp}}</p>
+</div>
 {{/each}}
 </div>
 

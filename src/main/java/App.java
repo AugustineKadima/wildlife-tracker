@@ -1,5 +1,6 @@
 import modules.EndangeredAnimal;
 import modules.Sightings;
+import org.postgresql.gss.GSSOutputStream;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -25,9 +26,9 @@ public class App {
 //        String connectionString = "jdbc:postgresql://localhost:5432/animal_tracker";
 //        Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
 
-        String connectionString = "postgresql://equcrtjgiuqdnv:32f74a1ac27fbb9c978d62c9a7c484c30afa3f53820c4eef732b56b219c65d6e@ec2-52-203-74-38.compute-1.amazonaws.com:5432/de32oaklddncai"; //!
+        String connectionString = "postgresql://dqjxqzjdpjankk:0350379f524162b0f5ca660640bdbf4bf0dbe71a3dd98d063b24d0709f8400f9@ec2-54-159-35-35.compute-1.amazonaws.com:5432/dev0msao0l23la"; //!
         Sql2o sql2o = new Sql2o(connectionString,
-                "equcrtjgiuqdnv", "32f74a1ac27fbb9c978d62c9a7c484c30afa3f53820c4eef732b56b219c65d6e");
+                        "dqjxqzjdpjankk", "0350379f524162b0f5ca660640bdbf4bf0dbe71a3dd98d063b24d0709f8400f9");
 
         staticFileLocation("/public");
 
@@ -60,12 +61,15 @@ public class App {
             String  animalName = request.queryParams("name");
             String  location = request.queryParams("location");
             String  health = request.queryParams("health");
-            String  rangerName = request.queryParams("rangerName");
+            String  rangerName = request.queryParams("ranger_name");
             String  age = request.queryParams("age");
             EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName, health, age, location, rangerName );
             endangeredAnimal.save();
             List<EndangeredAnimal> animalObj = EndangeredAnimal.getAll();
+            List<Sightings> siteObj = Sightings.getAll();
+            System.out.println(animalObj.get(0).getName());
             model.put("animal", animalObj);
+            model.put("site", siteObj);
             return new ModelAndView(model, "/trackedAnimals.hbs");
         }, new HandlebarsTemplateEngine());
 
