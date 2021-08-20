@@ -1,4 +1,6 @@
-modules/EndangeredAnimalTest.java
- modules.EndangeredAnimalTest
 modules/AnimalTest.java
  modules.AnimalTest
+modules/SightingsTest.java
+ modules.SightingsTest
+modules/EndangeredAnimalTest.java
+ modules.EndangeredAnimalTest

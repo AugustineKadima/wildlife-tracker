@@ -10,23 +10,23 @@ import org.sql2o.Sql2o;
 
 public class EndangeredAnimalTest {
 
-    private static Connection conn;
-    @BeforeAll
-    public static void databaseOpens(){
-        String connection = "jdbc:postgresql://localhost:5432/animals_test";
-        Sql2o sql2o = new Sql2o(connection, "sirkadima", "kadima123");
-        conn = sql2o.open();    }
-
-    @AfterEach
-    public void deletesDatabaseObjects() {
-       EndangeredAnimal.clearAll();
-    }
+//    private static Connection conn;
+//    @BeforeAll
+//    public static void databaseOpens(){
+//        String connection = "jdbc:postgresql://localhost:5432/animals_test";
+//        Sql2o sql2o = new Sql2o(connection, "sirkadima", "kadima123");
+//        conn = sql2o.open();    }
 //
-    @Test
-    public void EndangeredAnimalClassExists(){
-        EndangeredAnimal endangeredAnimal = new EndangeredAnimal("bat", "healthy", "young","Naks", "John");
-        Assertions.assertEquals(true, endangeredAnimal instanceof EndangeredAnimal);
-    }
+//    @AfterEach
+//    public void deletesDatabaseObjects() {
+//       EndangeredAnimal.clearAll();
+//    }
+////
+//    @Test
+//    public void EndangeredAnimalClassExists(){
+//        EndangeredAnimal endangeredAnimal = new EndangeredAnimal("bat", "healthy", "young","Naks", "John");
+//        Assertions.assertEquals(true, endangeredAnimal instanceof EndangeredAnimal);
+//    }
 
 //    @Test
 //    public void EndangeredAnimalsAddedToArrayList(){
