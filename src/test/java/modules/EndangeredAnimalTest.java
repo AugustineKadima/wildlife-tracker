@@ -49,6 +49,10 @@ public class EndangeredAnimalTest {
     public void dataSavedToTheDatabase(){
         EndangeredAnimal endangeredAnimal1 = new EndangeredAnimal("Sheep", "healthy", "young", "Kenya", "Ivar");
         endangeredAnimal1.save();
-        Assertions.assertEquals(true, EndangeredAnimal.getAll().get(0).equals(endangeredAnimal1));
+        Assertions.assertEquals(EndangeredAnimal.getAll().get(0).getHealth(), endangeredAnimal1.getHealth());
+        Assertions.assertEquals(EndangeredAnimal.getAll().get(0).getName(), endangeredAnimal1.getName());
+        Assertions.assertEquals(EndangeredAnimal.getAll().get(0).getAge(), endangeredAnimal1.getAge());
+        Assertions.assertEquals(EndangeredAnimal.getAll().get(0).getLocation(), endangeredAnimal1.getLocation());
+
     }
 }
