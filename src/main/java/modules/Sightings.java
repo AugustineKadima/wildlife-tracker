@@ -54,7 +54,7 @@ public class Sightings {
         try (Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO sightings(name, timestamp) VALUES (:name, now());";
             con.createQuery(sql)
-                    .addParameter("name", name)
+                    .addParameter("name", this.name)
                     .executeUpdate();
         } catch (Sql2oException error) {
             System.out.println("There was an error: " + error);

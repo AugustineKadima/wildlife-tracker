@@ -11,7 +11,7 @@ public class SightingsTest {
     private static Connection conn;
     @BeforeAll
     public static void setUp() {
-       String connection = "jdbc:postgresql://localhost:5432/animal_tracker_test";
+       String connection = "jdbc:postgresql://localhost:5432/animals_test";
        DB.sql2o = new Sql2o(connection, "sirkadima", "kadima123");
 
 
@@ -27,21 +27,27 @@ public class SightingsTest {
 
     }
 //
+    @Test
+    public void instaceIsOfClass(){
+        Sightings sightings = new Sightings("Komarok");
+        Assertions.assertEquals(true, sightings instanceof Sightings);
+    }
 
-//    @Test
-//    public void nameIsSaved(){
-//        Sightings sightings = new Sightings("Henry");
-//        sightings.save();
-//        assertEquals(Sightings.getAll().get(0).getName(), sightings.getName());
-//    }
+    @Test
+    public void variablesAssignable(){
+        Sightings sightings = new Sightings("Ololua");
+        sightings.setName("Maasai mara");
+        sightings.setId(1);
+        Assertions.assertEquals("Maasai mara", sightings.getName());
+        Assertions.assertEquals(1, sightings.getId());
+    }
 
-//    @Test
-//    public void all_returnsAllInstancesOfName_true() {
-//        Sightings site= new Sightings("Henry");
-//        site.save();
-//        Sightings site2 = new Sightings("Harriet");
-//        site2.save();
-//        assertEquals(true, Sightings.getAll().get(0).equals(site));
-//        assertEquals(true, Sightings.getAll().get(1).equals(site2));
-//    }
+    @Test
+    public void nameIsSaved(){
+        Sightings sightings = new Sightings("Henry");
+        sightings.save();
+        assertEquals(Sightings.getAll().get(0).getName(), sightings.getName());
+    }
+
+
 }

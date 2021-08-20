@@ -108,11 +108,11 @@ public class EndangeredAnimal{
         try(Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animals(name, health, age, location, ranger_name) VALUES (:name, :health, :age, :location, :ranger_name );";
             con.createQuery(sql)
-                    .addParameter("name", name)
-                    .addParameter("health", health)
-                    .addParameter("age", age)
-                    .addParameter("location", location)
-                    .addParameter("ranger_name", ranger_name)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("location", this.location)
+                    .addParameter("ranger_name", this.ranger_name)
                     .executeUpdate();
         }
         catch (Sql2oException error){
